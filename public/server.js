@@ -35,6 +35,9 @@ app.post('/api/students', (req, res) => {
            students.push(name)
            if (name === 'Cody') {
             rollbar.info('Name was Cody!')
+           } else {
+            rollbar.critical('Name was not Cody!')
+            rollbar.warning('Warning: was not Cody ')
            }
            res.status(200).send(students)
        } else if (name === ''){
