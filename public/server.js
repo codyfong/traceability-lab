@@ -33,6 +33,9 @@ app.post('/api/students', (req, res) => {
    try {
        if (index === -1 && name !== '') {
            students.push(name)
+           if (name === 'Cody') {
+            rollbar.info('Name was Cody!')
+           }
            res.status(200).send(students)
        } else if (name === ''){
            res.status(400).send('You must enter a name.')
